@@ -80,7 +80,7 @@ async function run() {
       const user = await usersCollection.findOne(query);
       if (user) {
         const token = jwt.sign({ email }, process.env.ACCESS_TOKEN_SECRET, {
-          expiresIn: "1d",
+          expiresIn: "5d",
         });
         return res.send({ accessToken: token });
       }
